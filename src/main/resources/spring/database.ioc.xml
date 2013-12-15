@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:jpa="http://www.springframework.org/schema/data/jpa"
        xmlns:repository="http://www.springframework.org/schema/data/repository"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
            http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.3.xsd
            http://www.springframework.org/schema/data/repository http://www.springframework.org/schema/data/repository/spring-repository.xsd">
 
@@ -40,5 +40,4 @@
             </value>
         </property>
     </bean>
-
 </beans>

@@ -6,8 +6,8 @@ import javax.validation.constraints.NotNull
 @Entity
 class SomeEntity {
     @Id
-    @SequenceGenerator(name = "SomeSequence", sequenceName = "SEQ_SOME_PK", allocationSize=1)
-    @GeneratedValue(strategy=GenerationType.AUTO, generator = "SomeSequence")
+    @SequenceGenerator(name = "SomeSequence", sequenceName = "SEQ_SOME_PK", initialValue=10000)
+    @GeneratedValue(generator = "SomeSequence")
     private Long id;
 
     @NotNull

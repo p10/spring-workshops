@@ -46,4 +46,5 @@ class SomeController {
         someEntityRepository.save(entity);
         return "redirect:/some/mine";
     }
+
 }
