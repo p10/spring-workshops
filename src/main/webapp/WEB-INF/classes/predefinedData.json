@@ -1,0 +1,23 @@
+[
+    {
+        "_class" : "eu.solidcraft.starter.domain.some.SomeEntity",
+        "id" : 1,
+        "username" : "test",
+        "someAmount": 100,
+        "someDate": "2009-04-12T20:44:55"
+    },
+    {
+        "_class" : "eu.solidcraft.starter.domain.some.SomeEntity",
+        "id" : 2,
+        "username" : "test",
+        "someAmount": 50,
+        "someDate": "2009-04-12T20:44:55"
+    },
+    {
+        "_class" : "eu.solidcraft.starter.domain.some.SomeEntity",
+        "id" : 3,
+        "username" : "test",
+        "someAmount": 30,
+        "someDate": "2009-04-12T20:44:55"
+    }
+]
