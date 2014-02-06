@@ -8,14 +8,14 @@ sourceCompatibility = 1.7
 version = '0.1.0'
 
 repositories {
-    maven { url "http://repo.spring.io/libs-snapshot" }
+    //maven { url "http://repo.spring.io/libs-snapshot" }
     mavenLocal()
     mavenCentral()
     maven { url "http://oss.sonatype.org/content/repositories/snapshots/" }
 }
 
-String springVersion = '4.0.0.RELEASE'
-String springSecurityVersion = '3.2.0.RC1'
+String springVersion = '4.0.1.RELEASE'
+String springSecurityVersion = '3.2.0.RELEASE'
 String hibernateVersion = '4.2.7.Final'
 String slf4jVersion = '1.7.5'
 
@@ -59,10 +59,10 @@ dependencies {
     compile 'org.hsqldb:hsqldb:2.3.1'
 
     //other
-    compile 'com.google.guava:guava:15.0'
+    compile 'com.google.guava:guava:16.0'
     compile 'joda-time:joda-time:2.3'
     compile 'org.jadira.usertype:usertype.jodatime:2.0.1'
-    compile 'org.codehaus.groovy:groovy-all:2.1.9'
+    compile 'org.codehaus.groovy:groovy-all:2.2.1'
     compile 'org.thymeleaf:thymeleaf-spring3:2.1.1.RELEASE'
 
     //if we decide not to use tomcat connection pool
@@ -87,7 +87,7 @@ dependencies {
 sourceSets {
     test {
         groovy {
-            srcDirs = ['src/test/unit/groovy', 'src/test/integration/groovy']
+            srcDirs = ['src/test/groovy']
         }
     }
 }

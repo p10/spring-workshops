@@ -19,7 +19,7 @@ class HttpBasicSecurityConfig extends WebSecurityConfigurerAdapter {
     @VisibleForTesting public static final String PASSWORD = "test"
 
     @Override
-    protected void registerAuthentication(AuthenticationManagerBuilder auth) throws Exception {
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.
             inMemoryAuthentication().
                 withUser(USERNAME).
