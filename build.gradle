@@ -19,6 +19,14 @@ String springSecurityVersion = '3.2.0.RELEASE'
 String hibernateVersion = '4.2.7.Final'
 String slf4jVersion = '1.7.5'
 
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        if (details.requested.group == 'org.springframework') {
+            details.useVersion springVersion
+        }
+    }
+}
+
 dependencies {
     providedCompile 'javax.servlet:javax.servlet-api:3.0.1'
 

@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -39,8 +40,8 @@ class SomeController {
         return ImmutableMap.of("entities", entities);
     }
 
-    @RequestMapping(value = "/some/add", method = RequestMethod.GET)
-    String add(BigDecimal amount) {
+    @RequestMapping(value = "/some/add")
+    String add(@RequestParam("amount") BigDecimal amount) {
         Assert.notNull(amount);
         SomeEntity entity = new SomeEntity(loggedUserRepository.getLoggedUserName(), amount, new Date());
         someEntityRepository.save(entity);

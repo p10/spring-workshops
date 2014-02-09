@@ -1,7 +1,7 @@
-package eu.solidcraft.starter.conf.init;
+package eu.solidcraft.starter.conf.init
 
-import org.springframework.core.annotation.Order;
-import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
+import org.springframework.core.annotation.Order
+import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer
 
 @Order(2)
 class SecurityWebAppInitializer extends AbstractSecurityWebApplicationInitializer {

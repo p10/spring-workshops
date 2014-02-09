@@ -1,6 +1,7 @@
 package eu.solidcraft.starter.conf.security
-
 import com.google.common.annotations.VisibleForTesting
+import eu.solidcraft.starter.conf.Profiles
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Profile
@@ -9,7 +10,6 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
-import eu.solidcraft.starter.conf.Profiles
 
 @Configuration
 @EnableWebSecurity
@@ -18,8 +18,8 @@ class HttpBasicSecurityConfig extends WebSecurityConfigurerAdapter {
     @VisibleForTesting public static final String USERNAME = "test"
     @VisibleForTesting public static final String PASSWORD = "test"
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+    @Autowired
+    protected void registerGlobalAuthentication(AuthenticationManagerBuilder auth) throws Exception {
         auth.
             inMemoryAuthentication().
                 withUser(USERNAME).
@@ -30,11 +30,14 @@ class HttpBasicSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.
-            csrf().disable().
             authorizeRequests().
                  anyRequest().authenticated().
                  and().
-            httpBasic()
+//            formLogin().permitAll().
+//                and().
+            httpBasic().
+                and().
+            csrf().disable()
     }
 
     @Override
