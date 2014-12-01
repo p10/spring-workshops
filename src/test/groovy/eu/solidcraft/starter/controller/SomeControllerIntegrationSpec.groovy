@@ -32,5 +32,6 @@ class SomeControllerIntegrationSpec extends IntegrationSpec {
             SomeEntity someEntity = response.entities.first()
             someEntity.someAmount == amount
             someEntity.username == user.username
+
     }
 }

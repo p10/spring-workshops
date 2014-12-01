@@ -19,6 +19,9 @@
 
     <bean class="org.springframework.data.web.config.SpringDataWebConfiguration" />
 
+
+
+
     <!-- **************************************************************** -->
     <!--  THYMELEAF-SPECIFIC ARTIFACTS                                    -->
     <!--  TemplateResolver <- TemplateEngine <- ViewResolver              -->
@@ -42,10 +45,9 @@
         &lt;!&ndash;<property name="viewNames" value="*" />&ndash;&gt;
     </bean>
 -->
-
-    <bean class="org.thymeleaf.spring3.view.ThymeleafViewResolver">
+    <bean id="thymeleafViewResolver" class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
         <property name="templateEngine" >
-            <bean class="org.thymeleaf.spring3.SpringTemplateEngine">
+            <bean class="org.thymeleaf.spring4.SpringTemplateEngine">
                 <property name="templateResolver" >
                     <bean class="org.thymeleaf.templateresolver.ServletContextTemplateResolver">
                         <property name="prefix" value="/WEB-INF/templates/" />

@@ -1,5 +1,4 @@
 package base
-
 import eu.solidcraft.starter.conf.security.HttpBasicSecurityConfig
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.authentication.AuthenticationManager
