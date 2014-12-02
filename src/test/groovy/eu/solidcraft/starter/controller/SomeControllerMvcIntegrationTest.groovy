@@ -15,7 +15,7 @@ public class SomeControllerMvcIntegrationTest extends MvcIntegrationTest {
         mockMvc.perform(get('/some/add').
                 param('amount', "100").
                 accept(MediaType.TEXT_HTML)).
-                andExpect(status().isMovedTemporarily()).
+                andExpect(status().isFound()).
                 andExpect(redirectedUrl("/some/mine"));
     }
 

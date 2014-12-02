@@ -1,8 +1,12 @@
 package eu.solidcraft.starter.conf
 
-class Profiles {
-    static final String DEFAULT = 'default';
-    static final String PRODUCTION = 'starter.production';
-    static final String DEVELOPMENT = 'starter.development';
-    static final String TEST = 'starter.test';
+import groovy.transform.CompileStatic;
+
+@CompileStatic
+interface Profiles {
+    String DEVELOPMENT = 'starter.development'
+    String PRODUCTION = 'starter.production'
+    String TEST = 'starter.test'
+    String ASPECTTEST = 'starter.aspecttest'
+    String DEFAULT = 'default'
 }

@@ -33,8 +33,8 @@ class HttpBasicSecurityConfig extends WebSecurityConfigurerAdapter {
             authorizeRequests().
                  anyRequest().authenticated().
                  and().
-//            formLogin().permitAll().
-//                and().
+            formLogin().permitAll().
+                and().
             httpBasic().
                 and().
             csrf().disable()

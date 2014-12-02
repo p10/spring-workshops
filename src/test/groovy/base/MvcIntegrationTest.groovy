@@ -1,5 +1,7 @@
 package base
 
+import eu.solidcraft.starter.BackendAuthenticator
+import eu.solidcraft.starter.conf.Profiles
 import eu.solidcraft.starter.conf.security.HttpBasicSecurityConfig
 import org.junit.Before
 import org.junit.runner.RunWith
@@ -21,7 +23,7 @@ import org.springframework.web.context.WebApplicationContext
 @Transactional
 @TransactionConfiguration(defaultRollback = true)
 @ContextConfiguration(locations = ["classpath:/spring/test.ioc.xml"])
-@ActiveProfiles(profiles = ['starter.test'])
+@ActiveProfiles(profiles = [Profiles.TEST])
 abstract class MvcIntegrationTest {
     @Autowired private WebApplicationContext webApplicationContext;
     @Autowired private AuthenticationManager authenticationManager

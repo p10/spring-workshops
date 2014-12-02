@@ -16,9 +16,7 @@ class SomeControllerIntegrationSpec extends IntegrationSpec {
         then:
             List<SomeEntity> entities = someEntityRepository.findByUsername(user.username)
             entities.size() == 1
-            SomeEntity someEntity = entities.first()
-            someEntity.someAmount == amount
-            someEntity.username == user.username
+            firstEntityIsCorrect(entities)
     }
 
     def "should show my entities"() {
@@ -29,9 +27,13 @@ class SomeControllerIntegrationSpec extends IntegrationSpec {
             Map response = someController.mine()
 
         then:
-            SomeEntity someEntity = response.entities.first()
-            someEntity.someAmount == amount
-            someEntity.username == user.username
+            firstEntityIsCorrect(response.entities)
+    }
 
+
+    private void firstEntityIsCorrect(List<SomeEntity> entities) {
+        SomeEntity someEntity = entities.first()
+        someEntity.someAmount == amount
+        someEntity.username == user.username
     }
 }
