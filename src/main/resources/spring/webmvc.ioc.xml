@@ -19,32 +19,10 @@
 
     <bean class="org.springframework.data.web.config.SpringDataWebConfiguration" />
 
-
-
-
     <!-- **************************************************************** -->
     <!--  THYMELEAF-SPECIFIC ARTIFACTS                                    -->
     <!--  TemplateResolver <- TemplateEngine <- ViewResolver              -->
     <!-- **************************************************************** -->
-<!--
-    <bean id="templateResolver" class="org.thymeleaf.templateresolver.ServletContextTemplateResolver">
-        <property name="prefix" value="/web/templates/" />
-        <property name="suffix" value=".html" />
-        <property name="templateMode" value="HTML5" />
-        <property name="characterEncoding" value="UTF-8" />
-    </bean>
-
-    <bean id="templateEngine" class="org.thymeleaf.spring3.SpringTemplateEngine">
-        <property name="templateResolver" ref="templateResolver" />
-    </bean>
-
-    <bean class="org.thymeleaf.spring3.view.ThymeleafViewResolver">
-        <property name="templateEngine" ref="templateEngine" />
-        <property name="characterEncoding" value="UTF-8" />
-        <property name="order" value="1" />
-        &lt;!&ndash;<property name="viewNames" value="*" />&ndash;&gt;
-    </bean>
--->
     <bean id="thymeleafViewResolver" class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
         <property name="templateEngine" >
             <bean class="org.thymeleaf.spring4.SpringTemplateEngine">
