@@ -28,7 +28,7 @@
     <!-- **************************************************************** -->
 <!--
     <bean id="templateResolver" class="org.thymeleaf.templateresolver.ServletContextTemplateResolver">
-        <property name="prefix" value="/WEB-INF/templates/" />
+        <property name="prefix" value="/web/templates/" />
         <property name="suffix" value=".html" />
         <property name="templateMode" value="HTML5" />
         <property name="characterEncoding" value="UTF-8" />
@@ -49,11 +49,12 @@
         <property name="templateEngine" >
             <bean class="org.thymeleaf.spring4.SpringTemplateEngine">
                 <property name="templateResolver" >
-                    <bean class="org.thymeleaf.templateresolver.ServletContextTemplateResolver">
-                        <property name="prefix" value="/WEB-INF/templates/" />
+                    <bean class="org.thymeleaf.templateresolver.ClassLoaderTemplateResolver">
+                        <property name="prefix" value="templates/" />
                         <property name="suffix" value=".html" />
                         <property name="templateMode" value="HTML5" />
                         <property name="characterEncoding" value="UTF-8" />
+                        <property name="cacheable" value="false"/>
                     </bean>
                 </property>
             </bean>
@@ -67,11 +68,10 @@
     <!--  RESOURCE FOLDERS CONFIGURATION                                  -->
     <!--  Dispatcher configuration for serving static resources           -->
     <!-- **************************************************************** -->
-    <mvc:resources location="/WEB-INF/images/" mapping="/images/**" />
-    <mvc:resources location="/WEB-INF/css/" mapping="/css/**" />
-    <mvc:resources location="/WEB-INF/fonts/" mapping="/fonts/**" />
-    <mvc:resources location="/WEB-INF/js/" mapping="/js/**" />
-    <mvc:resources location="/WEB-INF/assets/" mapping="/assets/**" />
+    <mvc:resources location="classpath:/public/images/" mapping="/images/**" />
+    <mvc:resources location="classpath:/public/css/" mapping="/css/**" />
+    <mvc:resources location="classpath:/public/js/" mapping="/js/**" />
+    <mvc:resources location="classpath:/public/assets/" mapping="/assets/**" />
 
     <mvc:view-controller path="/error" view-name="error"/>
 

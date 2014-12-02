@@ -1,11 +1,11 @@
+package eu.solidcraft.starter
+
 import ch.qos.logback.classic.encoder.PatternLayoutEncoder
 import ch.qos.logback.core.ConsoleAppender
 import ch.qos.logback.core.FileAppender
 import ch.qos.logback.core.status.OnConsoleStatusListener
 import groovy.transform.Field
-import static ch.qos.logback.classic.Level.DEBUG
-
-// THIS FILE IS IN WEB-INF/classes/, because IDEA 12 compiles all groovy in src, even in resources, and this problem is solved in IDEA 13.
+import static ch.qos.logback.classic.Level.*
 
 @Field String systemOutAppender = 'systemOut'
 @Field String logFileAppender = 'logfile'
