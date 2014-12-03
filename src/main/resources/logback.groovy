@@ -39,6 +39,6 @@ def setupAppenders() {
 }
 
 def setupLoggers() {
-    root DEBUG, [systemOutAppender, logFileAppender]
+    root WARN, [systemOutAppender, logFileAppender]
 }
 

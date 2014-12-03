@@ -1,4 +1,4 @@
-package eu.solidcraft.starter.controller;
+package eu.solidcraft.starter.infrastructure.controller;
 
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

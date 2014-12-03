@@ -1,5 +1,5 @@
 package base
-import eu.solidcraft.starter.BackendAuthenticator
+import eu.solidcraft.starter.infrastructure.BackendAuthenticator
 import eu.solidcraft.starter.conf.Profiles
 import eu.solidcraft.starter.conf.security.HttpBasicSecurityConfig
 import org.springframework.beans.factory.annotation.Autowired

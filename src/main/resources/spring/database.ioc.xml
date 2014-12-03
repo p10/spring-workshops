@@ -9,7 +9,7 @@
            http://www.springframework.org/schema/data/repository http://www.springframework.org/schema/data/repository/spring-repository.xsd
            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <jpa:repositories base-package="eu.solidcraft.starter.domain" />
+    <jpa:repositories base-package="eu.solidcraft.starter.examples" />
 
     <tx:annotation-driven proxy-target-class="true" />
 

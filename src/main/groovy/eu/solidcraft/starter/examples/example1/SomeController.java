@@ -1,8 +1,6 @@
-package eu.solidcraft.starter.controller;
+package eu.solidcraft.starter.examples.example1;
 
 import com.google.common.collect.ImmutableMap;
-import eu.solidcraft.starter.domain.some.SomeEntity;
-import eu.solidcraft.starter.domain.some.SomeEntityRepository;
 import eu.solidcraft.starter.infrastructure.security.LoggedUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

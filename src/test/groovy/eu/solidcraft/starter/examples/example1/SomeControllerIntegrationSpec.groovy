@@ -1,7 +1,5 @@
-package eu.solidcraft.starter.controller
+package eu.solidcraft.starter.examples.example1
 import base.IntegrationSpec
-import eu.solidcraft.starter.domain.some.SomeEntity
-import eu.solidcraft.starter.domain.some.SomeEntityRepository
 import org.springframework.beans.factory.annotation.Autowired
 
 class SomeControllerIntegrationSpec extends IntegrationSpec {

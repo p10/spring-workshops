@@ -1,4 +1,4 @@
-package eu.solidcraft.starter.domain.some
+package eu.solidcraft.starter.examples.example1
 
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue

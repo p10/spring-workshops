@@ -1,4 +1,4 @@
-package eu.solidcraft.starter
+package eu.solidcraft.starter.infrastructure
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.authentication.AuthenticationManager
