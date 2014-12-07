@@ -1,14 +1,8 @@
 package eu.solidcraft.starter.conf.web
-
 import groovy.transform.TypeChecked
 import org.springframework.context.annotation.Configuration
 import org.springframework.http.MediaType
-import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer
-import org.springframework.web.servlet.config.annotation.EnableWebMvc
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
-import org.springframework.web.servlet.config.annotation.ViewControllerRegistry
-import org.springframework.web.servlet.config.annotation.ViewResolverRegistry
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
+import org.springframework.web.servlet.config.annotation.*
 import org.springframework.web.servlet.view.json.MappingJackson2JsonView
 import org.thymeleaf.spring4.SpringTemplateEngine
 import org.thymeleaf.spring4.view.ThymeleafViewResolver
@@ -43,9 +37,8 @@ class WebConfig extends WebMvcConfigurerAdapter {
 
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
-        ThymeleafViewResolver thymeleafViewResolver = createThymeleafViewResolver()
         registry.enableContentNegotiation(true, new MappingJackson2JsonView())
-        registry.viewResolver(thymeleafViewResolver)
+        registry.viewResolver(createThymeleafViewResolver())
     }
 
     private ThymeleafViewResolver createThymeleafViewResolver() {
@@ -71,5 +64,6 @@ class WebConfig extends WebMvcConfigurerAdapter {
         templateResolver.setCacheable(false)
         return templateResolver
     }
+
 
 }
