@@ -3,7 +3,6 @@ package eu.solidcraft.starter.examples.task1;
 import eu.solidcraft.starter.examples.task1.detector.FraudDetector;
 import eu.solidcraft.starter.examples.task1.detector.FraudException;
 import eu.solidcraft.starter.examples.task1.rule.ScoringRule;
-import org.springframework.beans.factory.annotation.Autowired;
 
 public class ScoreCalculator {
 
@@ -11,7 +10,6 @@ public class ScoreCalculator {
 
     private ScoringRuleProvider scoringRuleProvider;
 
-    @Autowired
     public ScoreCalculator(FraudDetector fraudDetector, ScoringRuleProvider scoringRuleProvider) {
         this.fraudDetector = fraudDetector;
         this.scoringRuleProvider = scoringRuleProvider;
