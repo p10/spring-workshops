@@ -16,15 +16,6 @@
 
     <aop:aspectj-autoproxy proxy-target-class="true"/>
 
-    <context:component-scan
-            base-package="eu.solidcraft.starter.conf,
-                          eu.solidcraft.starter.infrastructure,
-                          eu.solidcraft.starter.aop,
-                          eu.solidcraft.starter.examples.example1,
-                          eu.solidcraft.starter.examples.example2,
-                          eu.solidcraft.starter.examples.task1,">
-    </context:component-scan>
-
-    <import resource="task.ioc.xml"/>
+    <context:component-scan base-package="eu.solidcraft.starter" />
 
 </beans>
