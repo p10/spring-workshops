@@ -21,8 +21,10 @@
                           eu.solidcraft.starter.infrastructure,
                           eu.solidcraft.starter.aop,
                           eu.solidcraft.starter.examples.example1,
-                          eu.solidcraft.starter.examples.example2">
+                          eu.solidcraft.starter.examples.example2,
+                          eu.solidcraft.starter.examples.task1,">
     </context:component-scan>
 
+    <import resource="task.ioc.xml"/>
 
 </beans>
