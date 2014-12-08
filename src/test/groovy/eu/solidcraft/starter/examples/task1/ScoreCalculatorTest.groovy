@@ -1,19 +1,35 @@
 package eu.solidcraft.starter.examples.task1
 
 import base.IntegrationSpec
+import eu.solidcraft.starter.examples.task1.detector.FraudException
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.beans.factory.annotation.Qualifier
 
 class ScoreCalculatorTest extends IntegrationSpec {
 
     @Autowired
-    ScoreCalculator scoreCalculator
+    @Qualifier("polishScoreCalculator")
+    ScoreCalculator polishScoreCalculator
 
-    def "should calculate loan apply"() {
+    @Autowired
+    @Qualifier("englishScoreCalculator")
+    ScoreCalculator englishScoreCalculator
+
+    def "should calculate loan apply for PL"() {
 
         when:
-        def result = scoreCalculator.calculateLoanApply()
+        def result = polishScoreCalculator.calculateLoanApply()
 
         then:
         result == 6
+    }
+
+    def "should calculate loan apply for ENG"() {
+
+        when:
+        englishScoreCalculator.calculateLoanApply()
+
+        then:
+        thrown FraudException
     }
 }

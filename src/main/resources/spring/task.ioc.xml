@@ -11,12 +11,19 @@
         http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
         http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-    <bean class="eu.solidcraft.starter.examples.task1.ScoreCalculator" name="scoreCalculator">
+    <bean class="eu.solidcraft.starter.examples.task1.ScoreCalculator" name="englishScoreCalculator">
+        <constructor-arg index="0" ref="englishFraudDetector"/>
+        <constructor-arg index="1" ref="scoringRuleProvider"/>
+    </bean>
+
+    <bean class="eu.solidcraft.starter.examples.task1.ScoreCalculator" name="polishScoreCalculator">
         <constructor-arg index="0" ref="polishFraudDetector"/>
         <constructor-arg index="1" ref="scoringRuleProvider"/>
     </bean>
 
     <bean id="polishFraudDetector" class="eu.solidcraft.starter.examples.task1.detector.PolishFraudDetector"/>
+    <bean id="englishFraudDetector" class="eu.solidcraft.starter.examples.task1.detector.EnglishFraudDetector"/>
+
     <bean id="scoringRuleProvider" class="eu.solidcraft.starter.examples.task1.ScoringRuleProvider">
         <constructor-arg>
             <list>
