@@ -4,9 +4,6 @@ import eu.solidcraft.starter.examples.task1.detector.FraudDetector;
 import eu.solidcraft.starter.examples.task1.detector.FraudException;
 import eu.solidcraft.starter.examples.task1.rule.ScoringRule;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-import java.util.function.BinaryOperator;
 
 public class ScoreCalculator {
 
