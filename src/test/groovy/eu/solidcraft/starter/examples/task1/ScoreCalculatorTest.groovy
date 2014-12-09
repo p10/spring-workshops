@@ -21,7 +21,7 @@ class ScoreCalculatorTest extends IntegrationSpec {
         def result = polishScoreCalculator.calculateLoanApply()
 
         then:
-        result == 6
+        result == 7.1
     }
 
     def "should calculate loan apply for ENG"() {

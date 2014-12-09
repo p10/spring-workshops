@@ -3,7 +3,8 @@ package eu.solidcraft.starter.examples.task1;
 import eu.solidcraft.starter.examples.task1.detector.FraudDetector;
 import eu.solidcraft.starter.examples.task1.detector.FraudException;
 import eu.solidcraft.starter.examples.task1.rule.ScoringRule;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import java.math.BigDecimal;
 
 public class ScoreCalculator {
 
@@ -11,13 +12,12 @@ public class ScoreCalculator {
 
     private ScoringRuleProvider scoringRuleProvider;
 
-    @Autowired
     public ScoreCalculator(FraudDetector fraudDetector, ScoringRuleProvider scoringRuleProvider) {
         this.fraudDetector = fraudDetector;
         this.scoringRuleProvider = scoringRuleProvider;
     }
 
-    public Long calculateLoanApply() {
+    public BigDecimal calculateLoanApply() {
 
         if (fraudDetector.isFraud()) {
             throw new FraudException();
@@ -27,6 +27,7 @@ public class ScoreCalculator {
                 .getRules()
                 .stream()
                 .map(ScoringRule::getScore)
-                .reduce((score1, score2) -> score1 + score2).get();
+                .reduce((score1, score2) -> score1.add(score2))
+                .get();
     }
 }
