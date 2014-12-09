@@ -31,6 +31,10 @@ class SomeEntity {
         this.someDate = someDate
     }
 
+    public void setId(Long id) {
+        this.id = id
+    }
+
     Long getId() {
         return id
     }
@@ -45,5 +49,28 @@ class SomeEntity {
 
     Date getSomeDate() {
         return someDate
+    }
+
+    boolean equals(o) {
+        if (this.is(o)) return true
+        if (!(o instanceof SomeEntity)) return false
+
+        SomeEntity that = (SomeEntity) o
+
+        if (id != that.id) return false
+        if (someAmount != that.someAmount) return false
+        if (someDate != that.someDate) return false
+        if (username != that.username) return false
+
+        return true
+    }
+
+    int hashCode() {
+        int result
+        result = (id != null ? id.hashCode() : 0)
+        result = 31 * result + (username != null ? username.hashCode() : 0)
+        result = 31 * result + (someAmount != null ? someAmount.hashCode() : 0)
+        result = 31 * result + (someDate != null ? someDate.hashCode() : 0)
+        return result
     }
 }
