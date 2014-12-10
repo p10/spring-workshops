@@ -4,6 +4,8 @@ import eu.solidcraft.starter.examples.task1.detector.FraudDetector;
 import eu.solidcraft.starter.examples.task1.detector.FraudException;
 import eu.solidcraft.starter.examples.task1.rule.ScoringRule;
 
+import java.math.BigDecimal;
+
 public class ScoreCalculator {
 
     private FraudDetector fraudDetector;
@@ -15,7 +17,7 @@ public class ScoreCalculator {
         this.scoringRuleProvider = scoringRuleProvider;
     }
 
-    public Long calculateLoanApply() {
+    public BigDecimal calculateLoanApply() {
 
         if (fraudDetector.isFraud()) {
             throw new FraudException();
@@ -25,6 +27,7 @@ public class ScoreCalculator {
                 .getRules()
                 .stream()
                 .map(ScoringRule::getScore)
-                .reduce((score1, score2) -> score1 + score2).get();
+                .reduce((score1, score2) -> score1.add(score2))
+                .get();
     }
 }

@@ -6,15 +6,16 @@ import eu.solidcraft.starter.examples.task1.ScoringRuleProvider;
 import eu.solidcraft.starter.examples.task1.detector.EnglishFraudDetector;
 import eu.solidcraft.starter.examples.task1.detector.FraudDetector;
 import eu.solidcraft.starter.examples.task1.detector.PolishFraudDetector;
-import eu.solidcraft.starter.examples.task1.rule.AgeScoringRule;
-import eu.solidcraft.starter.examples.task1.rule.JobScoringRule;
-import eu.solidcraft.starter.examples.task1.rule.LoansHistoryScoringRule;
-import eu.solidcraft.starter.examples.task1.rule.ScoringRule;
+import eu.solidcraft.starter.examples.task1.rule.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class AppConfig {
+
+    @Autowired
+    private UserHistoryScoringRule userHistoryScoringRule;
 
     @Bean
     public FraudDetector polishFraudDetector() {
@@ -43,6 +44,7 @@ public class AppConfig {
                     .add(new AgeScoringRule())
                     .add(new JobScoringRule())
                     .add(new LoansHistoryScoringRule())
+                    .add(userHistoryScoringRule)
                     .build()
         );
     }

@@ -31,7 +31,7 @@ class WebConfig extends WebMvcConfigurerAdapter {
     public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
         configurer.
                 mediaTypes(['json': MediaType.APPLICATION_JSON, 'html':MediaType.TEXT_HTML]).
-                defaultContentType(MediaType.TEXT_HTML)
+                defaultContentType(MediaType.APPLICATION_JSON)
 
     }
 
